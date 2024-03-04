@@ -1,18 +1,13 @@
 <template>
   <div>
-    <h2>Score: 0</h2>
+    <h2>Score: {{ score }}</h2>
   </div>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      
-    };
-  },
-  methods: {
-    
+  props: {
+    score: Number
   }
 };
 </script>
