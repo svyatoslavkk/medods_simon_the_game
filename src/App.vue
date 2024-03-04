@@ -1,24 +1,32 @@
 <template>
+  <main>
   <div id="app" class="app">
     <div>
       <button class="button" @click="toggleGame">{{ gameInProgress ? 'Reset Game' : 'Start Game' }}</button>
     </div>
     <SelectLevel @difficultyChanged="changeDifficulty" />
     <Stat :score="score" />
-    <Playground 
-      :colors="colors" 
-      @clicked="handleButtonClick" 
-      :playSound="playSound" 
+    <Playground
+      :colors="colors"
+      @clicked="handleButtonClick"
+      :playSound="playSound"
       :sounds="sounds"
     />
     <audio v-for="(color, index) in colors" :ref="`${color}Sound`" :key="index" :src="`/src/assets/${color}.mp3`"></audio>
   </div>
+  <GameOver 
+    :score="score" 
+    v-if="modalVisible"
+    @continueClicked="closeGameOverModal"
+  />
+  </main>
 </template>
 
 <script>
 import SelectLevel from './components/SelectLevel.vue';
 import Playground from './components/Playground.vue';
 import Stat from './components/Stat.vue';
+import GameOver from './components/GameOver.vue';
 
 export default {
   name: 'app',
@@ -26,6 +34,7 @@ export default {
     SelectLevel,
     Playground,
     Stat,
+    GameOver,
   },
   data () {
     return {
@@ -40,7 +49,8 @@ export default {
         normal: 1000,
         hard: 400
       },
-      sounds: {}
+      sounds: {},
+      modalVisible: false
     }
   },
   mounted() {
@@ -95,7 +105,7 @@ export default {
     checkSequence() {
       for (let i = 0; i < this.userSequence.length; i++) {
         if (this.userSequence[i] !== this.sequence[i]) {
-          this.gameOver();
+          this.showGameOverModal();
           return;
         }
       }
@@ -106,9 +116,12 @@ export default {
         }, 1000);
       }
     },
-    gameOver() {
-      alert('Game Over! Your score: ' + this.score);
-      this.gameInProgress = false;
+    showGameOverModal() {
+      this.modalVisible = true;
+    },
+    closeGameOverModal() {
+      this.modalVisible = false;
+        this.resetGame();
     },
     activateButton(color) {
       const button = document.querySelector(`.play-button[style*="${color}"]`);
