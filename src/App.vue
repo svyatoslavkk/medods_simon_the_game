@@ -12,7 +12,7 @@
       :playSound="playSound"
       :sounds="sounds"
     />
-    <audio v-for="(color, index) in colors" :ref="`${color}Sound`" :key="index" :src="`/src/assets/${color}.mp3`"></audio>
+    <audio v-for="(color, index) in colors" :ref="`${color}Sound`" :key="index" :src="`./src/assets/${color}.mp3`"></audio>
   </div>
   <GameOver 
     :score="score" 
