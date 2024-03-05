@@ -12,11 +12,10 @@
       :playSound="playSound"
       :sounds="sounds"
     />
-    <audio ref="redSound" src="https://firebasestorage.googleapis.com/v0/b/store-def.appspot.com/o/red.mp3?alt=media&token=313828e6-f6ca-4588-adb5-71ef4581fdf6"></audio>
-    <audio ref="blueSound" src="https://firebasestorage.googleapis.com/v0/b/store-def.appspot.com/o/blue.mp3?alt=media&token=c94b72d5-ca54-4e1a-8a5a-fcc36c95f1f4"></audio>
-    <audio ref="greenSound" src="https://firebasestorage.googleapis.com/v0/b/store-def.appspot.com/o/green.mp3?alt=media&token=f85cda6f-c526-42cc-b3c2-411e4240e799"></audio>
-    <audio ref="goldSound" src="https://firebasestorage.googleapis.com/v0/b/store-def.appspot.com/o/gold.mp3?alt=media&token=0fe4d5c9-68e7-4f72-ab04-b11bb2c21862"></audio>
-
+    <audio ref="redSound" src="./src/assets/red.mp3"></audio>
+    <audio ref="blueSound" src="./src/assets/blue.mp3"></audio>
+    <audio ref="greenSound" src="./src/assets/green.mp3"></audio>
+    <audio ref="goldSound" src="./src/assets/gold.mp3"></audio>
   </div>
   <GameOver 
     :score="score" 
