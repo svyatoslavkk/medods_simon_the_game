@@ -12,10 +12,10 @@
       :playSound="playSound"
       :sounds="sounds"
     />
-    <audio ref="redSound" src="./src/assets/red.mp3" controls></audio>
-    <audio ref="blueSound" src="./src/assets/blue.mp3" controls></audio>
-    <audio ref="greenSound" src="./src/assets/green.mp3" controls></audio>
-    <audio ref="goldSound" src="./src/assets/gold.mp3" controls></audio>
+    <audio ref="redSound" src="/assets/red.mp3" controls></audio>
+    <audio ref="blueSound" src="/assets/blue.mp3" controls></audio>
+    <audio ref="greenSound" src="/assets/green.mp3" controls></audio>
+    <audio ref="goldSound" src="/assets/gold.mp3" controls></audio>
     <audio ref="redSound" src="https://firebasestorage.googleapis.com/v0/b/store-def.appspot.com/o/red.mp3?alt=media&token=313828e6-f6ca-4588-adb5-71ef4581fdf6" controls></audio>
     <audio ref="blueSound" src="https://firebasestorage.googleapis.com/v0/b/store-def.appspot.com/o/blue.mp3?alt=media&token=c94b72d5-ca54-4e1a-8a5a-fcc36c95f1f4" controls></audio>
     <audio ref="greenSound" src="https://firebasestorage.googleapis.com/v0/b/store-def.appspot.com/o/green.mp3?alt=media&token=f85cda6f-c526-42cc-b3c2-411e4240e799" controls></audio>
